@@ -6,6 +6,10 @@
 
 name: supabase
 version: "3.8"
+networks:
+  supabase_default:
+    driver: bridge
+
 
 services:
   studio:
