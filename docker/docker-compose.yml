@@ -6,9 +6,7 @@
 
 name: supabase
 version: "3.8"
-networks:
-  supabase_default:
-    driver: bridge
+
 
 
 services:
@@ -246,6 +244,10 @@ services:
   imgproxy:
     container_name: supabase-imgproxy
     image: darthsim/imgproxy:v3.8.0
+    networks:
+     supabase_default:
+      driver: bridge
+
     healthcheck:
       test: [ "CMD", "imgproxy", "health" ]
       timeout: 5s
